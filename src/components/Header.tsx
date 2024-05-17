@@ -1,8 +1,13 @@
-
-
-
-
-export const Header = ({car, removeFromCar, increaseQuantity, decrementQuantity, clearCart, isEmpty, carTotal}) => {
+ 
+ 
+ const Header = ({
+    car, 
+    removeFromCar, 
+    increaseQuantity, 
+    decrementQuantity, 
+    clearCart, 
+    isEmpty, 
+    carTotal}) => {
 
     
   return (
@@ -101,3 +106,5 @@ export const Header = ({car, removeFromCar, increaseQuantity, decrementQuantity,
     </>
   )
 }
+
+export default Header;

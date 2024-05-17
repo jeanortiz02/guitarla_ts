@@ -1,6 +1,6 @@
 
-import { Guitar } from './components/Guitar'
-import { Header } from './components/Header'
+import Guitar from './components/Guitar';
+import Header from './components/Header';
 import { useCar } from './hook/useCar';
 
 

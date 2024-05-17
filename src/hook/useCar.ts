@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { db } from '../data/db';
+import type { CarItem } from '../types';
 
 export function useCar () {
 
-    const initialCar = () => {
+    const initialCar  = () : CarItem[] => {
         const localStorageCar = localStorage.getItem('car');
         return localStorageCar ? JSON.parse(localStorageCar) : []
     }
 
 
-    const [data, setdata] = useState(db)
+    const [data] = useState(db)
     const [ car, setCar ] = useState(initialCar)
 
     const MAX_ITEMS = 5
