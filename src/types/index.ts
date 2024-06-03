@@ -10,3 +10,9 @@ export type Guitar = {
 export type CarItem = Guitar & {
     quantity: number;
 }
+
+// Usanto types utilites 
+// export type GuitarID = Pick<Guitar, 'id'> 
+
+// Usando loockup 
+// export type GuitarID = Guitar['id'];

@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { db } from '../data/db';
-import type { CarItem } from '../types';
+import type { CarItem, Guitar } from '../types';
 
 export function useCar () {
 
@@ -21,7 +21,7 @@ export function useCar () {
         localStorage.setItem('car', JSON.stringify(car));
     }, [car])
 
-    function addToCar(item) {
+    function addToCar(item : Guitar) {
 
         const itemExist = car.findIndex( guitar => guitar.id === item.id)
 
@@ -33,17 +33,17 @@ export function useCar () {
             setCar( updateCart );
 
                } else { // item does not exist
-            item.quantity = 1;
-            setCar([...car, item])
+                const newItem : CarItem = { ...item, quantity: 1 } 
+            setCar([...car, newItem])
         }
 
     }
 
-    function removeFromCar(id) {
+    function removeFromCar(id : Guitar['id']) {
         setCar( prevCart => prevCart.filter( guitar => guitar.id !== id) );
     }
 
-    function increaseQuantity(id) {
+    function increaseQuantity(id : Guitar['id']) {
         
        const updateCar =  car.map( item => {
 
@@ -59,7 +59,7 @@ export function useCar () {
        setCar( updateCar )
     }
 
-    function decrementQuantity(id) {
+    function decrementQuantity(id : Guitar['id']) {
         const updateCar = car.map( item => {
 
             if( item.id === id && item.quantity > MIN_ITEMS ) {

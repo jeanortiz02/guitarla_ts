@@ -1,4 +1,16 @@
- 
+
+import { CarItem } from '../types';
+
+
+type HeaderProps = {
+    car: CarItem[];
+    removeFromCar: (item: CarItem['id']) => void;
+    increaseQuantity: (item: CarItem['id']) => void;
+    decrementQuantity: (item: CarItem['id']) => void;
+    clearCart: () => void;
+    isEmpty: boolean;
+    carTotal : number;
+}
  
  const Header = ({
     car, 
@@ -7,7 +19,9 @@
     decrementQuantity, 
     clearCart, 
     isEmpty, 
-    carTotal}) => {
+    carTotal
+
+} : HeaderProps ) => {
 
     
   return (

@@ -10,8 +10,17 @@ import { useCar } from './hook/useCar';
 
 function App() {
 
-    const { addToCar, car, clearCart, data, decrementQuantity, increaseQuantity, 
-        removeFromCar, isEmpty, carTotal } = useCar()
+    const { 
+        addToCar, 
+        car, 
+        clearCart, 
+        data, 
+        decrementQuantity, 
+        increaseQuantity, 
+        removeFromCar, 
+        isEmpty, 
+        carTotal
+     } = useCar()
 
   return (
     <>
