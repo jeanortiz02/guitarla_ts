@@ -6,6 +6,7 @@ export type Guitar = {
     price: number;
 }
 
+// Heredando types
 export type CarItem = Guitar & {
     quantity: number;
 }
